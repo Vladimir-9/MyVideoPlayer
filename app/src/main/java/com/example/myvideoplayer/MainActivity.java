@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        intPosition = videoView.getCurrentPosition();
         outState.putInt("intPosition", intPosition);
     }
 
