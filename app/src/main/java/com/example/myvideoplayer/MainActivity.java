@@ -2,7 +2,9 @@ package com.example.myvideoplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         videoView.pause();
+        intPosition = videoView.getCurrentPosition();
     }
 
     @Override
@@ -60,5 +63,10 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         intPosition = videoView.getCurrentPosition();
         outState.putInt("intPosition", intPosition);
+    }
+
+    public void secondActivity(View view) {
+        Intent secondActivity = new Intent(this, TestActivity.class);
+        startActivity(secondActivity);
     }
 }
